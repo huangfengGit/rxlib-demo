@@ -1,0 +1,75 @@
+{
+  "ver": "1.0.23",
+  "importer": "image",
+  "imported": true,
+  "uuid": "c525a4b5-93ef-489b-9cf0-32a5db8ae7d0",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "c525a4b5-93ef-489b-9cf0-32a5db8ae7d0@6c48a",
+      "displayName": "bg_tip",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "c525a4b5-93ef-489b-9cf0-32a5db8ae7d0",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "c525a4b5-93ef-489b-9cf0-32a5db8ae7d0@f9941",
+      "displayName": "bg_tip",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 0,
+        "width": 340,
+        "height": 130,
+        "rawWidth": 340,
+        "rawHeight": 130,
+        "borderTop": 26,
+        "borderBottom": 31,
+        "borderLeft": 38,
+        "borderRight": 38,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "c525a4b5-93ef-489b-9cf0-32a5db8ae7d0@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "redirect": "c525a4b5-93ef-489b-9cf0-32a5db8ae7d0@f9941",
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

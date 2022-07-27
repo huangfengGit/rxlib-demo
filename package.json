@@ -1,0 +1,11 @@
+{
+  "name": "Lobby",
+  "uuid": "a9aaed39-73a0-40e5-8cc7-688788740b19",
+  "version": "3.5.2",
+  "creator": {
+    "version": "3.5.2"
+  },
+  "dependencies": {
+    "rubix-lib-hf": "0.0.25"
+  }
+}
