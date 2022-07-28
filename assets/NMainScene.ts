@@ -1,5 +1,4 @@
 import {
-    assetManager,
     AssetManager,
     log,
     ResolutionPolicy,
@@ -11,7 +10,6 @@ import {
 } from 'cc';
 import {DEBUG} from 'cc/env';
 import {TAutoRegEventCom, TScene} from 'rubix-lib-hf';
-import {C_AUDIO_KEY, C_BUNDLE_LIST} from './mainScene/script/global/NConst';
 import {E_StageType} from './mainScene/script/global/NEnum';
 import {gFunctions, NGlobal} from './mainScene/script/global/NGlobal';
 import {NDebugLayer} from './mainScene/script/layer/NDebugLayer';
@@ -83,15 +81,6 @@ export class NMainScene extends TScene {
         return new Size(cvs.width, cvs.height);
     }
 
-    private initAudio() {
-        NGlobal.audioMgr.init(
-            NGlobal.AssteMgr,
-            C_BUNDLE_LIST.COMMON,
-            'res/audio/',
-            C_AUDIO_KEY
-        );
-    }
-
     /**
      * getWinLayer
      */
@@ -131,26 +120,5 @@ export class NMainScene extends TScene {
             default:
                 break;
         }
-    }
-
-    /**
-     * enterFullScreen
-     */
-    public enterFullScreen(): Promise<any> {
-        return new Promise((resolve, _) => {
-            if (screen.supportsFullScreen) {
-                screen.requestFullScreen().then(() => {
-                    // this.autoAdapterSize();
-                    resolve(undefined);
-                });
-            } else {
-                // this.autoAdapterSize();
-                resolve(undefined);
-            }
-        });
-    }
-
-    public exitFullScreen(): Promise<any> {
-        return screen.exitFullScreen();
     }
 }
