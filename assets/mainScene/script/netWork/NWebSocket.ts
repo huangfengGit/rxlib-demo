@@ -1,30 +1,30 @@
 import {TWebSocket} from 'rubix-lib-hf';
 import {C_CUSTOM_EVENT} from '../../../mainScene/script/global/NConst';
 import {EventTarget, log} from 'cc';
-// import {
-//     E_Net_Compresstype,
-//     packagaMsg,
-//     unPackageMsg,
-// } from './uniLib/uniLibCore';
+import {
+    E_Net_Compresstype,
+    packagaMsg,
+    unPackageMsg,
+} from './uniLib/uniLibCore';
 import {NFunctionClass} from '../global/NFunction';
 
 export class NWebScoket extends TWebSocket {
     private _eventMgr: EventTarget;
     private _gFunc: NFunctionClass;
 
-    // private _compressType: E_Net_Compresstype;
-    // public set compressType(v: E_Net_Compresstype) {
-    //     this._compressType = v;
-    // }
-    // public get compressType() {
-    //     return this._compressType;
-    // }
+    private _compressType: E_Net_Compresstype;
+    public set compressType(v: E_Net_Compresstype) {
+        this._compressType = v;
+    }
+    public get compressType() {
+        return this._compressType;
+    }
 
     constructor(eventMgr: EventTarget, gFunc: NFunctionClass) {
         super();
         this._eventMgr = eventMgr;
         this._gFunc = gFunc;
-        // this._compressType = E_Net_Compresstype.NONE;
+        this._compressType = E_Net_Compresstype.NONE;
     }
 
     protected onOpen(_: Event): any {
@@ -35,23 +35,23 @@ export class NWebScoket extends TWebSocket {
      * send data
      */
     public sendData(data: any): void {
-        // let s: string = data.do || data.cmd_name;
-        // if (s != 'Pmd.TickReturnNullUserPmd_CS') {
-        //     this._gFunc.showWaitLayer();
-        //     console.log('ws send data : ', s, data);
-        // }
-        // super.sendData(packagaMsg(data, this._compressType));
+        let s: string = data.do || data.cmd_name;
+        if (s != 'Pmd.TickReturnNullUserPmd_CS') {
+            this._gFunc.showWaitLayer();
+            console.log('ws send data : ', s, data);
+        }
+        super.sendData(packagaMsg(data, this._compressType));
     }
 
     protected onMessage(event: MessageEvent): any {
-        // let rcv: any = unPackageMsg(event.data, this._compressType);
-        // if (Array.isArray(rcv)) {
-        //     for (const aRcv of rcv) {
-        //         this.dealMsg(aRcv);
-        //     }
-        // } else {
-        //     this.dealMsg(rcv);
-        // }
+        let rcv: any = unPackageMsg(event.data, this._compressType);
+        if (Array.isArray(rcv)) {
+            for (const aRcv of rcv) {
+                this.dealMsg(aRcv);
+            }
+        } else {
+            this.dealMsg(rcv);
+        }
     }
 
     private dealMsg(msg: any) {

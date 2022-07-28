@@ -113,6 +113,7 @@ export class NMainScene extends TScene {
 
     public exitStage(lastStageKey: number, stageKey: number): any {
         // NOTE: 清理资源等等
+        log(lastStageKey);
         switch (stageKey) {
             case E_StageType.LOBBY:
                 break;
